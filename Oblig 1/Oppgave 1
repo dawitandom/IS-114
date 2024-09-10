@@ -1,0 +1,41 @@
+fun nok-euro(nok): 
+  doc: "Denne funksjonen er for å endre kroner til Euro"
+  valuta = 10
+  euro = nok / valuta
+  euro 
+
+where:
+  nok-euro(200) is 20
+end
+
+fun nok-dollar(nok):
+  doc: "Denne funksjonen er for å endre kroner til USD"
+  valuta = 20
+  dollar = nok / valuta
+  dollar
+  
+  where: 
+  nok-dollar(20) is 1
+end
+valutaKurs = 10
+
+fun nokTilValuta(nok, valuta):
+  doc: "Denne funksjonen kan endre kroner til både Euro og USD"
+  if valuta == "euro":
+    nok / valutaKurs
+  else if valuta == "usd" : 
+    nok / valutaKurs
+  else:
+    "ugyldig valuta"
+  end 
+where:
+  nokTilValuta(100, "usd") is 10
+  nokTilValuta(100, "euro") is 10
+  nokTilValuta(10,"euro") is 1
+end
+
+nokTilValuta(100, "euro")
+
+nokTilValuta(100,"dollar") 
+
+
